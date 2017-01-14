@@ -1,0 +1,20 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "msa-template-ruby",
+        "description": "An exmple of a simple Ruby microservice"
+    },
+    "paths": {
+        "/hello-world": {
+            "get": {
+                "description": "Returns \"Hello world\"\n",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (5.0.0.1)
+      activesupport (= 5.0.0.1)
+    activerecord (5.0.0.1)
+      activemodel (= 5.0.0.1)
+      activesupport (= 5.0.0.1)
+      arel (~> 7.0)
+    activesupport (5.0.0.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    arel (7.1.4)
+    concurrent-ruby (1.0.2)
+    factbook (1.2.2)
+      activerecord
+      fetcher
+      logutils
+      nokogiri
+    fetcher (0.4.5)
+      logutils (>= 0.6)
+    i18n (0.7.0)
+    logutils (0.6.1)
+    mini_portile2 (2.1.0)
+    minitest (5.9.1)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
+    rack (1.6.5)
+    rack-protection (1.5.3)
+      rack
+    redis (3.0.2)
+    sinatra (1.4.7)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    thread_safe (0.3.5)
+    tilt (2.0.5)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  factbook
+  redis
+  sinatra
+
+BUNDLED WITH
+   1.13.6
