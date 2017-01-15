@@ -1,17 +1,191 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "1.0.0",
-        "title": "msa-template-ruby",
-        "description": "An exmple of a simple Ruby microservice"
+        "title": "MSA-WORLD-FACTBOOK",
+        "description": "Semi structured API for the CIA World Factbook, a reference of information for 267 countries.",
+        "version": "1.0.0"
     },
+    "produces": [
+        "application/json"
+    ],
     "paths": {
-        "/hello-world": {
+        "/ms/version": {
             "get": {
-                "description": "Returns \"Hello world\"\n",
+                "tags": [
+                    "msa-standard"
+                ],
+                "summary": "Return the microservice version number",
                 "responses": {
                     "200": {
-                        "description": "Successful response"
+                        "description": "the version number"
+                    }
+                }
+            }
+        },
+        "/ms/name": {
+            "get": {
+                "tags": [
+                    "msa-standard"
+                ],
+                "summary": "Return the microservice name",
+                "responses": {
+                    "200": {
+                        "description": "the name"
+                    }
+                }
+            }
+        },
+        "/ms/readme.md": {
+            "get": {
+                "tags": [
+                    "msa-standard"
+                ],
+                "summary": "Return the microservice readme in markdown",
+                "responses": {
+                    "200": {
+                        "description": "the readme in markdown"
+                    }
+                }
+            }
+        },
+        "/ms/readme.html": {
+            "get": {
+                "tags": [
+                    "msa-standard"
+                ],
+                "summary": "Return the microservice readme in html",
+                "responses": {
+                    "200": {
+                        "description": "the readme in html"
+                    }
+                }
+            }
+        },
+        "/swagger/swagger.json": {
+            "get": {
+                "tags": [
+                    "msa-standard"
+                ],
+                "summary": "Return the microservice Swagger JSON file",
+                "responses": {
+                    "200": {
+                        "description": "the Swagger JSON file"
+                    }
+                }
+            }
+        },
+        "/swagger/#": {
+            "get": {
+                "tags": [
+                    "msa-standard"
+                ],
+                "summary": "Return the Swagger-UI page",
+                "responses": {
+                    "200": {
+                        "description": "the Swagger-UI page"
+                    }
+                }
+            }
+        },
+        "/nginx/stats.json": {
+            "get": {
+                "tags": [
+                    "msa-standard"
+                ],
+                "summary": "Return stats about Nginx in JSON",
+                "responses": {
+                    "200": {
+                        "description": "the stats about Nginx in JSON"
+                    }
+                }
+            }
+        },
+        "/nginx/stats.html": {
+            "get": {
+                "tags": [
+                    "msa-standard"
+                ],
+                "summary": "Return a dashboard displaying the stats from Nginx",
+                "responses": {
+                    "200": {
+                        "description": "the Nginx stats dashboard"
+                    }
+                }
+            }
+        },
+        "/factbook/codes": {
+            "get": {
+                "tags": [
+                    "msa-world-factbook"
+                ],
+                "summary": "Returns the list of country codes",
+                "responses": {
+                    "200": {
+                        "description": "the list of valid country codes"
+                    }
+                }
+            }
+        },
+        "/factbook/attributes": {
+            "get": {
+                "tags": [
+                    "msa-world-factbook"
+                ],
+                "summary": "Returns the list of country attributes",
+                "responses": {
+                    "200": {
+                        "description": "the list of valid country attributes"
+                    }
+                }
+            }
+        },
+        "/factbook/{code}": {
+            "get": {
+                "tags": [
+                    "msa-world-factbook"
+                ],
+                "summary": "Returns a summary of all the data for a given country",
+                "parameters": [
+                    {
+                        "name": "code",
+                        "in": "path",
+                        "description": "a country code",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
+        "/factbook/{code}/{attribute}": {
+            "get": {
+                "tags": [
+                    "msa-world-factbook"
+                ],
+                "summary": "Returns the data for the specified attribute for a given country, as a string + an array of extracted numbers",
+                "parameters": [
+                    {
+                        "name": "code",
+                        "in": "path",
+                        "description": "a country code",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "attribute",
+                        "in": "path",
+                        "description": "a country attribute",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "the data"
                     }
                 }
             }
