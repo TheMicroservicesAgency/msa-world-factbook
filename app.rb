@@ -26,7 +26,7 @@ end
 # executed before processing any http request
 before do
   # Set the response headers
-  cache_control :no_cache
+  cache_control :public, :must_revalidate, :max_age => 86400
   content_type 'application/json'
 end
 
