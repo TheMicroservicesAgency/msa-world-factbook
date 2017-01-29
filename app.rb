@@ -15,6 +15,9 @@ countries_index = {}
 # executed only once, at startup
 configure do
 
+  # to prevents errors due to Rack::Protection::JsonCsrf
+  disable :protection
+
   # build a quick index country_code => country_name
   Factbook.codes.each do |code|
     countries_index[code.code] = code.name
