@@ -1,10 +1,6 @@
 
 # msa-world-factbook
 
-![](https://travis-ci.org/TheMicroservicesAgency/msa-world-factbook.svg?branch=master)
-[![](https://images.microbadger.com/badges/version/msagency/msa-world-factbook.svg)](https://microbadger.com/images/msagency/msa-world-factbook "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/msagency/msa-world-factbook.svg)](https://microbadger.com/images/msagency/msa-world-factbook "Get your own image badge on microbadger.com")
-
 Semi structured API for the CIA World Factbook, a reference of information for 267 countries.
 
 Built with the [factbook](https://github.com/factbook/factbook) ruby gem.
