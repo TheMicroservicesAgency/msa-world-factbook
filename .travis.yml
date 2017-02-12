@@ -1,0 +1,20 @@
+sudo: required
+language: node_js
+  - "6"
+env:
+  - PORT="9904"
+services:
+  - docker
+before_install:
+  - npm install newman --global
+  - export NAME=`cat NAME`
+  - export VERSION=`cat VERSION`
+  - docker build -t msagency/$NAME:$VERSION .
+  - docker run -d -p $PORT:80 msagency/$NAME:$VERSION
+script:
+  - newman run postman.json
+notifications:
+  - email: false
+  - slack:
+      rooms:
+        secure: EpmvWK5E221OIo/vpm9C8ZI1TTan17UBPpTRkU/suivdOIXSC/WMLkqQS1g/L3VIU33PkNqBdeHeAgpc5uni9LovtUE5CPzebhPXD+mtclMEt+PS2zhGwF8t2KCH+y9mWhtkE8e2df5yB3DgYNiRgEGEF5w35+wcldBSRpe7/AwEx0/iBn2kymhGHV8wyTuYwDTCY1DrRAW/16b/0ENLawm9VBF4SdMCHLYn9/kjsqOzqPw6yVeKiQSbE96cEVHEDeyCg/f9U/XEEPcy4ACGglN+BIAFpju74sBl7har179IjWrdb0ZErrFVl7UDSg1idRNEGL5z9oHxdiDFPScHM+BNzvxQXz105MsfFZhFGeIJ+3xqQjvnPMiSLvhsQFQHBtTgynluNhiH0NbRXaz1u1s5r6ADrpwgEcwGYIhScZ5fuobDRg/0k5wsyQYzTKRwvtIDIZRWu8sstYK+T4DaQilbK3yv/Xf+Z/3YylQUfJMPVRN9/P+IbxhOvBdUBuE0s6s7Q0zEYfSdNY/BEk3gyQY17TVSrU22n0rt8V9h2LKS7jbc5lzPyJ9BAbJe7s09Wsk8HHTxm7J6UurVORqo6cXgkquSoweJvKh02U3XWPrhEDHgxlp8Ov5u3KiD52cugQN9Ju6zGriM2nnv0C+d6Gc8IKWW/3ZDee8l2kfl/Pc=
