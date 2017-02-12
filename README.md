@@ -1,6 +1,10 @@
 
 # msa-world-factbook
 
+![](https://travis-ci.org/TheMicroservicesAgency/msa-world-factbook.svg?branch=master)
+[![](https://images.microbadger.com/badges/version/msagency/msa-world-factbook.svg)](https://microbadger.com/images/msagency/msa-world-factbook "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/msagency/msa-world-factbook.svg)](https://microbadger.com/images/msagency/msa-world-factbook "Get your own image badge on microbadger.com")
+
 Semi structured API for the CIA World Factbook, a reference of information for 267 countries.
 
 Built with the [factbook](https://github.com/factbook/factbook) ruby gem.
@@ -96,21 +100,21 @@ Without a specific attribute, a summary of all the data for this country will be
 
 ## Endpoints
 
-- [/factbook/codes](/factbook/codes) : Returns the list of country codes
-- [/factbook/attributes](/factbook/attributes) : Returns the list of country attributes
-- [/factbook/:code](/factbook/br) : Returns a summary of all the data for a given country
-- [/factbook/:code/:attribute](/factbook/br/taxes) : Returns the data for the specified attribute for a given country
+- GET [/factbook/codes](/factbook/codes) : Returns the list of country codes
+- GET [/factbook/attributes](/factbook/attributes) : Returns the list of country attributes
+- GET [/factbook/:code](/factbook/br) : Returns a summary of all the data for a given country
+- GET [/factbook/:code/:attribute](/factbook/br/taxes) : Returns the data for the specified attribute for a given country
 
 ## Standard endpoints
 
-- [/ms/version](/ms/version) : returns the version number
-- [/ms/name](/ms/name) : returns the name
-- [/ms/readme.md](/ms/readme.md) : returns the readme (this file)
-- [/ms/readme.html](/ms/readme.html) : returns the readme as html
-- [/swagger/swagger.json](/swagger/swagger.json) : returns the swagger api documentation
-- [/swagger/#/](/swagger/#/) : returns swagger-ui displaying the api documentation
-- [/nginx/stats.json](/nginx/stats.json) : returns stats about Nginx
-- [/nginx/stats.html](/nginx/stats.html) : returns a dashboard displaying the stats from Nginx
+- GET [/ms/version](/ms/version) : returns the version number
+- GET [/ms/name](/ms/name) : returns the name
+- GET [/ms/readme.md](/ms/readme.md) : returns the readme (this file)
+- GET [/ms/readme.html](/ms/readme.html) : returns the readme as html
+- GET [/swagger/swagger.json](/swagger/swagger.json) : returns the swagger api documentation
+- GET [/swagger/#/](/swagger/#/) : returns swagger-ui displaying the api documentation
+- GET [/nginx/stats.json](/nginx/stats.json) : returns stats about Nginx
+- GET [/nginx/stats.html](/nginx/stats.html) : returns a dashboard displaying the stats from Nginx
 
 ## About
 
