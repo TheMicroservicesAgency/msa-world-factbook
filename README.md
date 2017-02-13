@@ -44,6 +44,8 @@ To get the list of attributes :
       "area-land": "Area › land",
       "area-water": "Area › water",
       "area-note": "Area › note",
+       ...
+
 
 All the data is in text format, but the app will try to extract the numbers from the text for convenience :
 
@@ -57,7 +59,6 @@ All the data is in text format, but the app will try to extract the numbers from
           8515770.0
         ]
       }
-
 
     $ curl http://localhost:9904/factbook/us/area
     {
